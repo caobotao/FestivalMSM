@@ -26,7 +26,7 @@
         </activity>
 
         <provider
-            android:authorities="com.cbt.sms.provider.smsProvider"
+            android:authorities="com.example.sms.provider.smsProvider"
             android:name=".db.SmsProvider"/>
     </application>
 

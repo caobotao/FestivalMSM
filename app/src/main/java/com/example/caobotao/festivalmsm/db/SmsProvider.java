@@ -16,7 +16,7 @@ import com.example.caobotao.festivalmsm.bean.SendedMsg;
  * Created by caobotao on 15/12/26.
  */
 public class SmsProvider extends ContentProvider {
-    private static final String AUTHORITY = "com.cbt.sms.provider.smsProvider";
+    private static final String AUTHORITY = "com.example.sms.provider.smsProvider";
     public static final Uri URI_SMS_ALL = Uri.parse("content://" + AUTHORITY + "/sms");
     private static UriMatcher matcher;
     private static final int SMS_ALL = 0;

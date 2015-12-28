@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 
 import com.example.caobotao.festivalmsm.fragment.FestivalCategoryFragment;
+import com.example.caobotao.festivalmsm.fragment.SmsHistoryFragment;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
+                if (position == 1) {
+                    return new SmsHistoryFragment();
+                }
                 return new FestivalCategoryFragment();
             }
 
