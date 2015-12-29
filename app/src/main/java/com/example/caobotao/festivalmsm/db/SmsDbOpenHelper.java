@@ -37,10 +37,10 @@ public class SmsDbOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String sql = "create table " + SendedMsg.TABLE_NAME + "(" +
                 "_id integer primary key autoincrement," +
-                SendedMsg.COLUMN_DATE     + " integer " +
-                SendedMsg.COLUMN_FES_NAME + " text " +
-                SendedMsg.COLUMN_MSG      + " text " +
-                SendedMsg.COLUMN_NAMES    + " text " +
+                SendedMsg.COLUMN_DATE     + " integer ," +
+                SendedMsg.COLUMN_FES_NAME + " text ," +
+                SendedMsg.COLUMN_MSG      + " text ," +
+                SendedMsg.COLUMN_NAMES    + " text ," +
                 SendedMsg.COLUMN_NUMBERS  + " text " +
                 ")";
         db.execSQL(sql);

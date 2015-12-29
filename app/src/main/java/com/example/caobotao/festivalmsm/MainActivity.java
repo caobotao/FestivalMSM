@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.util.Log;
 
 import com.example.caobotao.festivalmsm.fragment.FestivalCategoryFragment;
 import com.example.caobotao.festivalmsm.fragment.SmsHistoryFragment;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public Fragment getItem(int position) {
                 if (position == 1) {
+                    Log.e("CBT", "position == 1-->");
                     return new SmsHistoryFragment();
                 }
                 return new FestivalCategoryFragment();

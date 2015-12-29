@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.example.caobotao.festivalmsm.bean.SendedMsg;
 
@@ -72,7 +73,9 @@ public class SmsProvider extends ContentProvider {
             throw new IllegalArgumentException("Wrong URI:" + uri);
         }
         mDb = mHelper.getWritableDatabase();
+        Log.e("CBT","SendedMsg.COLUMN_MSG-->"+(String) values.get(SendedMsg.COLUMN_MSG));
         long rowId = mDb.insert(SendedMsg.TABLE_NAME, null, values);
+        Log.e("CBT",rowId+"-->"+rowId+"");
         if (rowId > 0) {
             notifyDataSetChanged();
             return ContentUris.withAppendedId(uri, rowId);

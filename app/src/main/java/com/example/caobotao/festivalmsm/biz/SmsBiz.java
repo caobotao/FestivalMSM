@@ -3,9 +3,13 @@ package com.example.caobotao.festivalmsm.biz;
 import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.telephony.SmsManager;
+import android.util.Log;
 
 import com.example.caobotao.festivalmsm.bean.SendedMsg;
+import com.example.caobotao.festivalmsm.db.SmsDbOpenHelper;
 import com.example.caobotao.festivalmsm.db.SmsProvider;
 
 import java.util.ArrayList;
@@ -42,6 +46,7 @@ public class SmsBiz {
     }
 
     private void save(SendedMsg sendedMsg) {
+        Log.e("CBT","sendedMsg.getMsg()-->"+sendedMsg.getMsg());
         sendedMsg.setDate(new Date());
         ContentValues values = new ContentValues();
         values.put(SendedMsg.COLUMN_DATE, sendedMsg.getDate().getTime());
@@ -51,5 +56,6 @@ public class SmsBiz {
         values.put(SendedMsg.COLUMN_NUMBERS, sendedMsg.getNumbers());
 
         context.getContentResolver().insert(SmsProvider.URI_SMS_ALL, values);
+
     }
 }
